@@ -1,0 +1,103 @@
+CREATE TABLE movie_stars (id INTEGER primary key AUTOINCREMENT, 
+    full_name TEXT,
+    movie_title TEXT,
+    marriage_id INTEGER);
+    
+INSERT INTO movie_stars VALUES (1,'Ryan Gosling', 'Barbie', 1);
+
+INSERT INTO movie_stars VALUES (2,'Cillian Murphy', 'Oppenheimer', 2);
+
+INSERT INTO movie_stars VALUES (3,'Russell Crowe', 'Gladiator', 3);
+
+INSERT INTO movie_stars VALUES (4,'Eva Mendes', 'Hitch', 1);
+
+INSERT INTO movie_stars VALUES (5,'Denzel Washington', 'Remember the Titans', 5);
+
+INSERT INTO movie_stars VALUES (6,'Will Smith', 'I am Legend', 4);
+
+INSERT INTO movie_stars VALUES (7,'Tom Hanks', 'Forrest Gump', 6);
+
+INSERT INTO movie_stars VALUES (8,'Leonardo DiCaprio', 'Titanic', 7);
+
+INSERT INTO movie_stars VALUES (9,'Tom Cruise', 'Top Gun', 8);
+
+INSERT INTO movie_stars VALUES (10,'Julia Roberts', 'Pretty Woman', 9);
+
+INSERT INTO movie_stars VALUES (11,'Blake Lively', 'Green Lantern', 10);
+
+INSERT INTO movie_stars VALUES (12,'Ryan Renolds', 'Deadpool', 10);
+
+INSERT INTO movie_stars VALUES (13,' Joaquin Phenoix', 'Joker', 11);
+
+INSERT INTO movie_stars VALUES (14,'Jonny Depp', 'The Window', 12);
+
+INSERT INTO movie_stars VALUES (15,'Christian Bale', 'The Fighter', 13);
+
+
+
+CREATE TABLE singers (id INTEGER primary key AUTOINCREMENT, 
+    full_name TEXT,
+    song_title TEXT,
+    birthplace TEXT);
+    
+INSERT INTO singers VALUES (1,'Elvis', 'Houndog', 'Nashville');
+
+INSERT INTO singers VALUES (2,'Michael Jackson', 'Smooth Criminal', 'Los Angeles');
+
+INSERT INTO singers VALUES (3,'Weekend', 'Starboy', 'Toronto');
+
+CREATE TABLE authors (id INTEGER primary key AUTOINCREMENT, 
+    full_name TEXT,
+    book_title TEXT);
+    
+INSERT INTO authors VALUES (1,'JK Rowling', 'Harry Potter Series');
+
+INSERT INTO authors VALUES (2,'Stephen King', 'Misery');
+
+INSERT INTO authors VALUES (3,'Jess Kidd', 'Himself');
+
+INSERT INTO authors VALUES (4,'Gorgeos Lies', 'Martha McPhee');
+
+INSERT INTO authors VALUES (5,'All the Missing Girls', 'Megan Miranda');
+
+INSERT INTO authors VALUES (6,'The Dinner List', 'Rebecca Serle');
+
+INSERT INTO authors VALUES (7,'The Great Gatsby', 'F.Scott Fitzgerald');
+
+INSERT INTO authors VALUES (8,'In Cold Blood', 'Truman Capote');
+
+INSERT INTO authors VALUES (9,'Jane Eyre', 'Charlotte Bronte');
+
+INSERT INTO authors VALUES (10,'The Secret History', 'Donna Tarte');
+
+INSERT INTO authors VALUES (11,'Star Wars', 'Timothy Zahn');
+
+INSERT INTO authors VALUES (12,'In Cold Blood', 'Truman Capote');
+
+INSERT INTO authors VALUES (13,'The Help', 'Kathryn Stockett');
+
+INSERT INTO authors VALUES (14,'David Copperfield', 'Charles Dickens');
+
+INSERT INTO authors VALUES (15,'Charlie & the Chocolate Factory', 'Roald Dahl');
+
+CREATE TABLE characters (id INTEGER primary key AUTOINCREMENT, 
+    full_name TEXT,
+    relationship TEXT,
+    books TEXT,
+   author_id INTEGER);
+
+INSERT INTO characters VALUES (1,'Anakin Skywalker','father of Luke', 'Star Wars',11);
+
+INSERT INTO characters VALUES (2,'Luke Skywalker','son of Anakin', "Star Wars",11);
+
+INSERT INTO characters VALUES (3,'Julian Murrow','teacher', "Dark Knight",10);
+
+INSERT INTO characters VALUES (4,'Richard Hickrock','cellmate', "Space Jam",12);
+
+INSERT INTO characters VALUES (5,'Dumbledore','Headmaster of Hogwarts', "Harry Potter",1);
+
+INSERT INTO characters VALUES (6,'Willy Wonka','creator of Wonka Factory ', "Charlie & The Chocolate Factory",15);
+
+SELECT * FROM authors
+    JOIN characters
+    ON authors.id=characters.author_id;
